@@ -33,22 +33,22 @@ btn.addEventListener("click", () => {
     phoneError.textContent = "";
 
     const nameCheck = /^[^ -~｡-ﾟ]+$/;
-    if (nameInput.value === "" || !nameCheck.test(nameInput.value)){ //名前が未入力または全角以外の場合
+    if (nameInput.value.trim() === "" || !nameCheck.test(nameInput.value)){ //名前が未入力または全角以外の場合
         nameError.textContent = "正しい名前を入力してください";
     };
 
     const ageCheck = /^\d+$/;
-    if (ageInput.value === "" || !ageCheck.test(ageInput.value)){ //年齢が未入力の場合または半角数値以外が入力された場合
+    if (ageInput.value.trim() === "" || !ageCheck.test(ageInput.value)){ //年齢が未入力の場合または半角数値以外が入力された場合
         ageError.textContent = "正しい年齢を入力してください";
     };
 
     const emailCheck = /^[a-z\d][\w.-]*@[\w.-]+\.[a-z\d]+$/i;
-    if (emailInput.value === "" || !emailCheck.test(emailInput.value)){ //メアド未入力または＠が含まれないまたは全角文字が含まれるまたはフォーマットが○○@○○.○○でない場合
+    if (emailInput.value.trim() === "" || !emailCheck.test(emailInput.value)){ //メアド未入力または＠が含まれないまたは全角文字が含まれるまたはフォーマットが○○@○○.○○でない場合
         emailError.textContent = "正しいメアドを入力してください";
     };
 
     const phoneCheck = /^\d{11}$/;
-    if (phoneInput.value === "" || !phoneCheck.test(phoneInput.value)){ //電話番号が未入力または桁数11以外または数値以外が含まれている場合
+    if (phoneInput.value.trim() === "" || !phoneCheck.test(phoneInput.value)){ //電話番号が未入力または桁数11以外または数値以外が含まれている場合
         phoneError.textContent = "正しい電話番号を入力してください";
     };
 });
